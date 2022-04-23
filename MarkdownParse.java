@@ -10,12 +10,18 @@ public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
         String[] lines = markdown.split("\n");
+
         for (String s: lines){
-            int openParentheses = s.indexOf("(");
-            int closeParentheses = s.length()-1;
-            toReturn.add(s.substring(openParentheses + 1, closeParentheses));
+            if (s.indexOf("(") != -1){
+                int openParentheses = s.indexOf("(");
+                int closeParentheses = s.length()-1;
+                toReturn.add(s.substring(openParentheses + 1, closeParentheses));
+            }
         }
-        return toReturn;
+        if (toReturn.size() != 0){
+            return toReturn;
+        }
+        return new ArrayList<>();
         
     }
 
