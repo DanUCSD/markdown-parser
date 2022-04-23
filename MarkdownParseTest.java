@@ -15,8 +15,10 @@ public class MarkdownParseTest {
     public void testGetLinks() throws Exception {
         Path fileName = Path.of(("test-file.md"));
         String content = Files.readString(fileName);
-        String[] str = {"https://something.com", "some-page.html"};
+        String[] str = {"https://something.com", "some-thing.html"};
         ArrayList<String> arr = new ArrayList<>(Arrays.asList(str));
+
         assertEquals(MarkdownParse.getLinks(content), arr);
+
     }
 }
