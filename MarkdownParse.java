@@ -11,6 +11,7 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         String[] lines = markdown.split("\n");
 
+        int test = 0;
         for (String s: lines){
             if ((s.indexOf("(") != -1) &&
                 (s.indexOf("[") != -1 && s.indexOf("]") != -1)){
