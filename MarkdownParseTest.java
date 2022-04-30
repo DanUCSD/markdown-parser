@@ -45,4 +45,9 @@ public class MarkdownParseTest {
         ArrayList<String> arr = new ArrayList<>();
         assertEquals(MarkdownParse.getLinks(content), arr);
     }
+
+    @Test
+    public void testFail(){
+        assertEquals(1, 1+2);
+    }
 }
